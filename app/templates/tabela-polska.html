@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block body %}
+    <h2  class="welcomeHeader">Statystyka COVID-19 w Polsce</h2>
+    <p>{{description}}. Wojewodztwa są sortowane według ilości zachorowań od początku epidemii.</p>
+    <div class="centerTable">
+    <table>
+    <tr>
+            <td class="boldData">Wojewodztwo</td>
+            <td class="boldData">Zakażenia</td>
+            <td class="boldData">Przypadki śmiertelne</td>
+    </tr>
+    {% for country in tab %}
+        <tr>
+            <td>{{ country.Name}}</td>
+            <td class="centerData">{{ country.Cases | numberFormat}}</td>
+            <td class="centerData">{{ country.Deaths | numberFormat}}</td>
+        </tr>
+    {% endfor %}
+    </table>
+    </div>
+    <p>Źródło danych: <a href="https://www.gov.pl/web/koronawirus/wykaz-zarazen-koronawirusem-sars-cov-2">https://www.gov.pl/web/koronawirus/wykaz-zarazen-koronawirusem-sars-cov-2</a></p>
+{% endblock %}

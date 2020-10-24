@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block body %}
+    <h2 class="welcomeHeader">Statystyka COVID-19 w Europie</h2>
+    <p>Data pobrania danych: {{time}}. Państwa są sortowane według ilości zachorowań od początku epidemii.</p>
+    <table>
+    <tr>
+            <td class="boldData">Państwo</td>
+            <td class="boldData">Nowe zakażenia</td>
+            <td class="boldData">Wszystkie zakażenia</td>
+            <td class="boldData">Nowe przypadki śmiertelne</td>
+            <td class="boldData">Wszystkie przypadki śmiertelne</td>
+            <td class="boldData">Nowe wyzdrowienia</td>
+            <td class="boldData">Wszystkie wyzdrowienia</td>
+    
+    </tr>
+    {% for country in tab %}
+        <tr>
+            <td>{{ country.Name }}</td>
+            <td class="centerData">{{ country.NewCases | numberFormat }}</td>
+            <td class="centerData">{{ country.TotalCases | numberFormat}}</td>
+            <td class="centerData">{{ country.NewDeaths | numberFormat}}</td>
+            <td class="centerData">{{ country.TotalDeaths | numberFormat}}</td>
+            <td class="centerData">{{ country.NewRecovered | numberFormat}}</td>
+            <td class="centerData">{{ country.TotalRecovered | numberFormat}}</td>
+        </tr>
+    {% endfor %}
+    </table>
+    <p>Źródło danych: <a href="https://covid19api.com/">https://covid19api.com/</a></p>
+{% endblock %}
