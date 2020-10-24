@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+    <head>
+        <title> {{the_title}} </title>
+        <link type="text/css" rel="stylesheet" href="static/style.css"/>
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&amp;subset=latin-ext" rel="stylesheet">
+
+    </head>
+    <body>
+        <header>
+            <h1 class="logo">Statystyki COVID-19</h1>
+            <nav id="topnav">
+			<ul class="menu">
+				<li><a href="/">Strona główna</a></li>
+				<li><a href="/europa">Statystyka w Europie</a></li>
+				<li><a href="/polska">Statyska w Polsce</a></li>
+                <li><a href="/wykresy">Wykresy</a></li>
+                <li><a href="/o_nas">O nas</a></li>
+			</ul>
+			
+		    </nav>
+        </header>
+        <main>
+            <div class="container">
+            {% block body %}
+
+            {% endblock %}
+            </div>
+        </main>
+        <footer>
+		
+		<div class="info">
+            Autorzy: Michał Pilarski, Patryk Buliński, Marek Kycia. <a href="https://www.staszic.waw.pl/">XIV Liceum Ogólnokształcące im. Stanisława Staszica w Warszawie</a>
+		</div>
+	    </footer>
+	
+	
+    </body>
+</html>
