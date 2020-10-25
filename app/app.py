@@ -1,6 +1,6 @@
 from flask import Flask, render_template
-import dataEuropa
-import dataPolska
+import app.dataEuropa as dataEuropa
+import app.dataPolska as dataPolska
 from flask_charts import GoogleCharts, Chart
 
 app = Flask(__name__)
